@@ -1,0 +1,192 @@
+@charset "utf-8";
+
+/*
+
+   Personal Portfolio Site
+   Print Style Sheet
+
+   by David Richards
+   2021-10-31
+  
+   Filename: print.css
+
+*/
+
+@page {
+   width: 8.5in;
+   height: 11in;
+}
+
+/* Common Elements */
+
+header,
+body,
+main,
+article {
+   padding: 0;
+   margin: 0 auto;
+   text-decoration: none;
+}
+
+#navItem,
+audio,
+nav,
+aside,
+iframe {
+   display: none;
+}
+
+#contentLink {
+   text-align: center;
+}
+
+audio::after,
+iframe::after {
+   content: " (" attr(href) ") ";
+   word-break: break-all;
+   overflow-wrap: break-word;
+   text-decoration: underline;
+}
+
+a {
+   text-decoration: none;
+}
+
+a::after {
+   content: " (" attr(href) ") ";
+   color: black;
+   word-break: break-all;
+   overflow-wrap: break-word;
+   text-decoration: underline;
+   display: block;
+}
+
+#logo {
+   font-family: "Give You Glory", "ZCOOL KuaiLe", cursive;
+   text-shadow: 0 0 15px black, 1px 1px red;
+   text-align: left;
+   font-size: 1em;
+   width: 80%;
+   list-style: none;
+   padding: 0;
+}
+
+#slideshow img {
+   max-width: 400px;
+   max-height: 400px;
+   display: block;
+   margin: 0 auto;
+}
+
+#slideshow figcaption {
+   text-align: center;
+}
+
+#logo::after {
+   content: none;
+}
+
+h1 {
+   text-align: center;
+}
+
+#upcomingShows {
+   border: 2px solid black;
+   width: 50%;
+   text-align: center;
+   margin: 0 auto;
+}
+
+#upcomingShows caption {
+   font-weight: bold;
+   text-align: center;
+}
+
+#upcomingShows * {
+   width: 100%;
+}
+
+/* Form and table elements */
+
+form {
+   page-break-inside: avoid;
+   text-align: center;
+   margin: 10px auto;
+   width: 90%;
+   border: 2px solid black;
+}
+
+table#releases {
+   margin: 0 auto;
+}
+
+#releases img {
+   height: 75px;
+}
+
+table tr:nth-child(2n) td {
+   background-color: gray;
+}
+
+table tr:nth-child(2n + 1) td,
+#itemRow:nth-child(2n + 1) {
+   background-color: lightgrey;
+}
+
+/* Merch elements */
+
+#merch img {
+   width: 200px;
+}
+
+#itemRow {
+   margin: 0 auto;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   outline: black solid 1px;
+}
+
+#itemRow img {
+   max-height: 100px;
+}
+
+/* Footer elements */
+
+footer {
+   page-break-inside: avoid;
+   margin: 10px auto;
+   display: block;
+   flex-flow: column wrap;
+   align-content: center;
+   height: auto;
+   padding: 5px;
+   width: 80%;
+   overflow-wrap: break-word;
+   word-break: break-all;
+   text-align: center;
+}
+
+#followUs {
+   font-weight: bold;
+   text-align: center;
+   word-break: break-word;
+   font-weight: bold;
+   float: left;
+   width: 100%;
+   padding-bottom: 10px;
+}
+
+footer img {
+   filter: brightness(0.5);
+   width: 50px;
+   float: left;
+   margin: 5px 0;
+   padding: 5px;
+}
+
+footer a {
+   float: left;
+   width: 45%;
+   padding: 5px;
+}

@@ -1,0 +1,477 @@
+@charset "utf-8";
+
+/*
+
+   Portfolio Site
+   General Style Sheet
+
+   by David Richards
+   2021-10-31
+  
+   Filename: style.css
+
+*/
+
+/* Standardized styles are in this section until you
+   get to the specific screen size media queries */
+
+html {
+   background: center rgb(233, 229, 220) no-repeat fixed;
+   background-size: cover;
+   height: 100%;
+   font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+main {
+   background-color: whitesmoke;
+   box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+   margin: 0 auto;
+}
+
+a {
+   text-decoration-line: none;
+   font-family: sans-serif;
+}
+
+#contentLink {
+   display: none;
+}
+
+/* Aside Styles */
+
+nav #logo {
+   color: white;
+   font-family: "Trebuchet MS";
+   text-shadow: 0 0 15px black, 5px 3px red, -5px -3px darkslategray;
+   display: flex;
+   margin-top: 10px;
+   margin-left: 10px;
+}
+
+@keyframes widen {
+   0% {
+      text-shadow: 0 0 15px black, 5px 3px red, -5px -3px darkslategray;
+   }
+   33% {
+      text-shadow: 0 0 15px black, -5px -3px 5px red, 5px 3px 5px darkslategray;
+   }
+}
+
+nav div#logo:hover {
+   animation: widen 1s linear infinite;
+}
+
+@keyframes wiggle {
+   0% {
+      text-shadow: 0 0 15px black, 5px 3px red, -5px -3px darkslategray;
+      transform: rotateZ(0deg);
+   }
+   25% {
+      text-shadow: 0 0 15px black, -5px -3px 5px red, 5px 3px 5px darkslategray;
+      transform: rotateZ(5deg);
+   }
+   75% {
+      transform: rotateZ(-5deg);
+   }
+}
+
+nav {
+   text-align: left;
+   min-width: 200px;
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   display: flex;
+}
+
+nav > a {
+   color: rgb(26, 25, 41);
+   font-size: 20pt;
+   font-weight: bold;
+   padding: 20px;
+   float: left;
+   flex: 50%;
+   text-align: center;
+}
+
+@keyframes embiggen {
+   0% {
+      font-size: 200%;
+      transform: translateX(0px);
+   }
+   80% {
+      font-size: 250%;
+      transform: translateX(5px);
+      filter: hue-rotate(-10deg);
+   }
+   100% {
+      font-size: 200%;
+      transform: translateX(0px);
+   }
+}
+
+nav a#navItem:hover {
+   color: lightyellow;
+   text-shadow: darkslategrey 5px 5px;
+   background-image: linear-gradient(to right, rgb(211, 72, 23), transparent);
+   animation: embiggen 0.5s;
+}
+
+/* Slideshow Widget */
+
+#slideshow figure {
+   height: auto;
+   max-height: 750px;
+   max-width: 750px;
+   margin: 0 auto;
+   text-align: center;
+   position: relative;
+}
+
+#slideshow {
+   max-height: 750px;
+   max-width: 750px;
+}
+
+figure img {
+   display: block;
+}
+
+figcaption {
+   background-color: burlywood;
+   margin: 0;
+   position: absolute;
+   bottom: 0;
+   padding: 5px;
+}
+
+/* Article Styles */
+
+article {
+   margin-left: 10px;
+   width: 100%;
+}
+
+@keyframes colorshift {
+   0% {
+      filter: hue-rotate(-30deg) sepia(20%);
+   }
+   25% {
+      filter: hue-rotate(-80deg) sepia(20%);
+   }
+   50% {
+      filter: hue-rotate(-30deg) sepia(20%);
+   }
+   75% {
+      filter: hue-rotate(10deg) sepia(20%);
+   }
+   100% {
+      filter: hue-rotate(-30deg) sepia(20%);
+   }
+}
+
+article header h1 {
+   padding: 10px 10px 0 10px;
+   margin: 0;
+   height: 100px;
+   display: grid;
+   align-content: end;
+   font-family: sans-serif;
+   color: white;
+   font-size: 20pt;
+   transition: text-align 1s;
+   text-shadow: 1px 1px 3px black;
+}
+
+article header {
+   background: darkseagreen no-repeat;
+   background-size: cover;
+   animation: colorshift 20s linear infinite;
+}
+
+article p {
+   padding: 10px;
+   margin: 0;
+   font-family: sans-serif;
+}
+
+article p a,
+article ul li a {
+   color: white;
+   font-weight: bold;
+}
+
+article img {
+   width: 100%;
+}
+
+iframe {
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   filter: none;
+}
+
+article audio {
+   margin: 0 auto;
+   width: 100%;
+}
+
+article ul li {
+   list-style: circle;
+}
+
+table {
+   border-collapse: collapse;
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+   min-width: 80%;
+   width: 100%;
+}
+
+th {
+   border: solid black 1px;
+   background-color: blanchedalmond;
+}
+
+td {
+   padding: 2px;
+}
+
+table img {
+   max-width: 100px;
+}
+
+/* Footer Styles */
+
+#followUs {
+   display: none;
+}
+
+footer#follow {
+   background-color: rgb(149, 98, 81);
+   /* border: 3px solid rgb(214, 210, 216); */
+   color: white;
+   margin-top: 5px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+footer#follow div#icon:hover {
+   filter: invert(1);
+   background-color: rgba(0, 0, 0, 0.2);
+}
+
+div#icon {
+   border-radius: 10px;
+   color: white;
+   width: 100px;
+   height: 100px;
+   text-align: center;
+   margin: 5px;
+}
+
+/* Path Motion Effect */
+
+@keyframes pathMotion {
+   0% {
+      left: 0px;
+      top: 0px;
+   }
+   50% {
+      left: 100px;
+      top: 0px;
+   }
+   100% {
+      left: 0px;
+      top: 0px;
+   }
+}
+
+#pathMotion {
+   position: relative;
+   animation: pathMotion 5s linear infinite;
+}
+
+/* 
++=======================+
+|      Mobile Size      |
++=======================+
+*/
+@media only screen and (max-width: 800px) {
+   main {
+      display: inherit;
+      width: 100%;
+   }
+
+   main * {
+      text-align: center;
+      width: 100%;
+   }
+
+   /* Mobile Nav Styles */
+
+   nav {
+      flex-direction: column;
+   }
+
+   nav > a {
+      font-size: 200%;
+      padding: 5px 0;
+   }
+
+   nav a#navItem:hover {
+      color: lightyellow;
+      text-shadow: darkslategrey 5px 5px;
+      background-image: linear-gradient(to right, transparent, rgb(211, 72, 23), transparent);
+      animation: embiggen 0.5s;
+   }
+
+   nav div#logo {
+      font-size: 32pt;
+      text-align: center;
+      display: block;
+   }
+
+   :last-of-type(#navItem) {
+      font-size: 20pt;
+   }
+
+   /* Mobile Article Styles */
+
+   article {
+      margin: 0;
+      padding: 0;
+   }
+
+   article p,
+   li {
+      padding: 5px;
+      width: 100%;
+   }
+
+   figcaption {
+      padding: 5px 0;
+   }
+
+   caption {
+      padding-top: 10px;
+   }
+
+   article {
+      order: 1;
+   }
+
+   h1 {
+      text-align: center;
+   }
+
+   form {
+      margin-bottom: 50px;
+   }
+
+   /* Mobile Footer Styles */
+
+   footer {
+      order: 100;
+   }
+
+   footer#follow {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-flow: row wrap;
+      flex-direction: row;
+   }
+
+   footer#follow img {
+      filter: saturate(100) brightness(70%) sepia(100%) hue-rotate(120deg);
+      margin: auto;
+      padding: 10px;
+      color: white;
+      height: 50px;
+      width: 50px;
+   }
+}
+
+/* 
++=======================+
+|      Desktop Size     |
++=======================+
+*/
+
+@media screen and (min-width: 801px) {
+   main {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 90%;
+      transition: max-width 0.25s;
+      display: flex;
+   }
+
+   article {
+      width: 100%;
+   }
+
+   nav {
+      flex-direction: column;
+      width: 15%;
+      text-align: left;
+      max-width: 200px;
+   }
+
+   nav a {
+      text-align: left;
+      z-index: 1;
+   }
+
+   nav #logo {
+      font-size: 30pt;
+   }
+
+   #slideshow {
+      min-height: 500px;
+   }
+
+   form {
+      margin: 10px auto;
+      width: 95%;
+   }
+
+   /* Desktop Footer */
+
+   footer#follow {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-flow: row wrap;
+      flex-direction: row;
+      max-width: 90%;
+   }
+
+   footer#follow img {
+      filter: saturate(100) brightness(70%) sepia(100%) hue-rotate(120deg);
+      margin: 5px;
+      padding: 10px;
+      color: white;
+      height: 50%;
+      width: 50%;
+   }
+
+   div#icon {
+      border-radius: 10px;
+      color: white;
+      width: min-content;
+      height: 50px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+   }
+
+   div#icon > img {
+      height: 100%;
+      width: auto;
+   }
+}
