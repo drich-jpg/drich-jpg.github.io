@@ -233,6 +233,7 @@ table {
 th {
    border: solid black 1px;
    background-color: blanchedalmond;
+   min-width: 100px;
 }
 
 td {
@@ -240,7 +241,8 @@ td {
 }
 
 table img {
-   max-width: 100px;
+   max-width: 300px;
+   box-shadow: 1px 1px 5px black;
 }
 
 /* Footer Styles */

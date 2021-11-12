@@ -5,37 +5,76 @@
    
          David Richards :: Home
          Author: David Richards
-         Date:   2021-10-18
+         Date:   2021-11-12
    
-         Filename: home.html
+         Filename: index.html
    
       -->
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>David Richards :: Home</title>
+      <title>David Richards :: Projects</title>
       <link rel="stylesheet" href="style.css" media="screen" />
       <link rel="stylesheet" href="print.css" media="print" />
+      <link rel="icon" href="img/favicon.png" sizes="16x16" type="image/jpg" />
    </head>
-   <body class="home">
+   <body>
       <main>
          <aside>
             <nav>
-               <a href="home.html"
+               <a href="index.html"
                   ><div id="logo">David<br />Richards</div></a
                >
+               <!-- Nav sidebar built, need more content
                <a href="#" id="navItem"><div>About</div></a>
-               <a href="#" id="navItem"><div>Projects</div></a>
-               <a href="#" id="navItem"><div>Graphic Design</div></a>
+               <a href="#" id="navItem"><div>Page2</div></a>
+               <a href="#" id="navItem"><div>Page3</div></a>
+               <a href="#" id="navItem"><div>Page4</div></a>
+               -->
             </nav>
          </aside>
          <article>
-            <div id="contentLink"><h1>David Richards :: Home</h1></div>
-            This page is currently under construction, please check back later for more information.
+            <header><h1>Projects</h1></header>
+            <p>Hello, I am currently building a portfolio of custom web development projects. I have some familiarity with HTML, CSS, Javascript, PHP, Python, and Java.</p>
+            <table id="releases">
+               <thead>
+                  <th>Preview</th>
+                  <th>Project Name</th>
+                  <th>Tools</th>
+                  <th>Links</th>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>
+                        <a href="https://davidrichards.me/san-diego-native-plants/static-site.html"><img src="img/thumbnails/sdplants_300x300.png" /></a>
+                     </td>
+                     <td>
+                        <h4>San Diego Native Plants Website</h4>
+                        <p>A static website powered by custom Javascript widgets intended to assist students with remembering different species of native flora around San Diego county.</p>
+                     </td>
+                     <td>HTML, CSS, Javascript</td>
+                     <td>
+                        [<a href="https://davidrichards.me/san-diego-native-plants/static-site.html">Website</a>]<br />
+                        [<a href="https://github.com/drich-jpg/san-diego-native-plants">GitHub</a>]
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <a href="https://davidrichards.me/"><img src="img/thumbnails/portfolio_300x300.png" /></a>
+                     </td>
+                     <td>
+                        <h4>David Richards Portfolio Website</h4>
+                        <p>A static website listing projects made by David Richards.</p>
+                     </td>
+                     <td>HTML, CSS</td>
+                     <td>[<a href="https://davidrichards.me">Website</a>]</td>
+                  </tr>
+               </tbody>
+            </table>
          </article>
       </main>
       <footer id="follow">
-         <div id="followUs">Find me elsewhere:</div>
+         <div id="followUs">Find me online:</div>
          <a href="https://www.linkedin.com/in/davidrichardsme"
             ><div id="icon">LinkedIn<img id="icon" src="img/linkedin.png" alt="LinkedIn" /></div
          ></a>
