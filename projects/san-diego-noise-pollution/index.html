@@ -3,9 +3,9 @@
    <head>
       <!--
    
-         David Richards :: San Diego Noise Pollution Map
+         David Richards :: Home
          Author: David Richards
-         Date:   2021-11-19
+         Date:   2021-11-12
    
          Filename: index.html
    
@@ -14,137 +14,9 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>David Richards :: Projects</title>
-      <link rel="stylesheet" href="../../style.css" media="screen" />
-      <link rel="stylesheet" href="../../print.css" media="print" />
-      <link rel="icon" href="../../img/favicon.png" sizes="16x16" type="image/jpg" />
-      <script src="select_map.js" defer></script>
-      <style>
-         h3 {
-            margin: 0;
-         }
-
-         div#map_display {
-            display: flex;
-            flex-flow: row wrap;
-            align-items: center;
-         }
-
-         div#map_display > * {
-            padding-bottom: 20px;
-         }
-
-         div#map_display img {
-            border: 1px solid black;
-            box-shadow: 1px 1px 3px black;
-            max-width: 100%;
-            transition: max-width 0.25s;
-            position: relative;
-            flex: 100%;
-            max-width: 95%;
-         }
-
-         /*
-         div#map_display img:hover {
-            border: 1px solid black;
-            box-shadow: 1px 1px 3px black;
-            max-width: 200%;
-            transition: max-width .75s;
-            z-index: 1;
-         }
-         */
-
-         #charts-thumbnails {
-            display: flex;
-            flex-wrap: wrap row;
-            justify-content: center;
-            align-items: center;
-         }
-
-         #charts-thumbnails > div {
-            margin-top: 50px;
-            text-align: center;
-            margin: auto 0.5%;
-            width: 25%;
-            height: 75px;
-            background-color: burlywood;
-            border-radius: 25px 25px 0 0;
-            user-select: none;
-            display: flex;
-            flex-wrap: wrap row;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-         }
-
-         #charts-thumbnails img {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto;
-         }
-
-         #map_display {
-            background-color: burlywood;
-         }
-
-         div#map_display > figure {
-            display: flex;
-            flex-flow: row wrap;
-            padding: 10px;
-            gap: 30px;
-            justify-content: center;
-            margin: 0 auto;
-            float: left;
-            flex: 50%;
-         }
-
-         #map_display > figure > .block {
-            flex: 2 2 400px;
-         }
-
-         .image_block {
-            flex: 2 2 600px;
-            float: left;
-         }
-
-         #map_display figcaption {
-            background-color: bisque;
-            width: 100%;
-            text-align: center;
-         }
-
-         #map_display img {
-            margin: 0 auto;
-            display: block;
-         }
-
-         #combined_map {
-            display: block;
-            float: left;
-         }
-
-         .next_button {
-            text-align: center;
-            display: block;
-            float: left;
-            width: 50%;
-            font-size: 150%;
-            background-color: lightskyblue;
-         }
-
-         footer {
-            clear: both;
-         }
-      </style>
-      <style id="tabcolor">
-         #charts-thumbnails > div:nth-child(2) {
-            background-color: bisque;
-            font-weight: bold;
-         }
-         div.next_button:hover {
-            background-color: steelblue;
-            user-select: none;
-         }
-      </style>
+      <link rel="stylesheet" href="style.css" media="screen" />
+      <link rel="stylesheet" href="print.css" media="print" />
+      <link rel="icon" href="img/favicon.png" sizes="16x16" type="image/jpg" />
    </head>
    <body>
       <main>
@@ -154,10 +26,11 @@
                   ><div id="logo">David<br />Richards</div></a
                >
                <a href="/index.html" id="navItem"><div>Projects</div></a>
-               <a href="/" id="navItem"><div>Noise Maps</div></a>
+               <a href="/projects/san-diego-noise-pollution/index.html" id="navItem"><div>Noise Maps</div></a>
                <a href="https://davidrichards.me/san-diego-native-plants/index.html" id="navItem"><div>San Diego Native Plants</div></a>
 
                <!-- Nav sidebar built, need more content
+               <a href="#" id="navItem"><div>About</div></a>
                <a href="#" id="navItem"><div>Page2</div></a>
                <a href="#" id="navItem"><div>Page3</div></a>
                <a href="#" id="navItem"><div>Page4</div></a>
@@ -165,74 +38,69 @@
             </nav>
          </aside>
          <article>
-            <header><h1>Noise Pollution in San Diego</h1></header>
-            <p>
-               San Diego County is a busy hub of all sorts of activity, from its downtown urban developments, to its military bases, and to its busy freeway systems. As someone who prefers peace and quiet, I developed this map to depict souces of
-               distracting noise. Studies in noise profiles may be especially useful for neighborhood planning and school developments, since students especially need to be able to focus on their studies. This project was completed utilizing ESRI ArcMap
-               for a GIS class final project in Spring 2018.
-            </p>
-            <div id="charts-thumbnails">
-               <div onclick="cycle_map('backward')" style="font-size: 400%; background-color: lightskyblue">←</div>
-               <div onclick="select_map('0')"><span>Combined Map</span></div>
-               <div onclick="select_map('1')"><span>Traffic</span></div>
-               <div onclick="select_map('2')"><span>Population</span></div>
-               <div onclick="select_map('3')"><span>Industrial</span></div>
-               <div onclick="select_map('4')"><span>Noisy Neighbors</span></div>
-               <div onclick="cycle_map('forward')" style="font-size: 400%; background-color: lightskyblue">→</div>
-            </div>
-            <div id="map_display">
-               <figcaption>
-                  <h2>Combined Noise Pollution Map</h2>
-                  <i>Q: How many elementary schools in San Diego County are exposed to high levels of noise pollution?</i>
-               </figcaption>
-               <div class="image_block"><img src="combined-noise-map.png" alt="combined noise pollution map" /></div>
-               <figure>
-                  <div class="block">
-                     <h3>Methodology</h3>
-                     <p>
-                        I identified a number of high noise sources, figured out where those sources are within the county, and found out how many of the 721 identified elementary schools fell within close proximity to those noise sources. Noise intensity
-                        refers to either the frequency or intensity of noise in a given area and 'high' is the top tier in a natural breaks classification. I first identified a number of factors that would likely be the highest contributors to noise
-                        pollution: road traffic, air traffic, fire stations, population density, noisy neighbors, and heavy industry. I then made and merged a number of maps based on those factors to make the four gray-boxed maps. I combined the results
-                        of the four individual maps to create the Combined Noise Map.
-                     </p>
-                  </div>
-                  <div class="block">
-                     <h3>General Criteria</h3>
-                     <ul>
-                        <li>Schools must offer grades 1 -5</li>
-                        <li>Schools must be within San Diego County</li>
-                        <li>Noise data to be broken into four tiers with the fourth tier being invisible</li>
-                     </ul>
-                  </div>
-                  <div class="block">
-                     <h3>Data Sources</h3>
-                     <p>Major roads, highways, schools, industries, population, city limits, city case report, runways, air noise contours, fire stations, county boundary, terrain data (for map texture aesthetics)</p>
-                     <p><i>Data files were obtained from the United States Census Bureau, The City of San Diego, and The San Diego Association of Governments (SANDAG). Further information is provided on the individual map pages.</i></p>
-                  </div>
-                  <div class="block">
-                     <h3>Results</h3>
-                     <p>
-                        My results, which are illustrated in the Combined Noise Map, show that <b>11.7%</b> of San Diego county elementary schools (84 schools) fall within high noise zones, <b>32.9%</b> (237 schools) fell within mid noise zones, and
-                        <b>35.4%</b> (255 schools) fell within low noise zones. These numbers represent schools within mutually-exclusive merged areas, not factoring in overlap between multiple areas. The figures show that about a tenth of schools in the
-                        county are exposed to high levels of noise pollution. Much of this high noise is the inevitable result of mass urbanization. Other high-noise areas depicted on the maps, such as the Miramar Marine Corps Air Station, are already
-                        distanced from residential communities. Ideally, I would have liked to have consistent CNEL (Community Noise Equivalent Levels) data or decibel readings for all parts of the county, perhaps gathered at various locations and
-                        interpolated thereafter. This consistency in units would avoid the issue of comparing arbitrarily 'high' areas. The workaround I used, organizing the data into three tiers, works better on the four component maps rather than the
-                        combined noise map and more optimally identifies individual noise factors to be addressed.
-                     </p>
-                  </div>
-               </figure>
-            </div>
-            <div class="next_button" onclick="cycle_map('backward')">← Previous Map</div>
-            <div class="next_button" onclick="cycle_map('forward')">Next Map →</div>
+            <header><h1>Projects</h1></header>
+            <p>Hello, I am currently building a portfolio of custom web development projects. I have some familiarity with HTML, CSS, Javascript, PHP, Python, and Java.</p>
+            <table id="releases">
+               <thead>
+                  <th>Preview</th>
+                  <th>Project Name</th>
+                  <th>Tools</th>
+                  <th>Links</th>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>
+                        <a href="/projects/san-diego-noise-pollution/index.html"><img src="/img/thumbnails/sdnoisemap_300x300.png" /></a>
+                     </td>
+                     <td>
+                        <h4>San Diego Noise Map</h4>
+                        <p>A series of maps depicting sources of noise pollution across San Diego County. Created with ArcMap utilizing data from SANDAG, the City of San Diego, and the US Census Bureau.</p>
+                     </td>
+                     <td>ESRI ArcMap, HTML, CSS</td>
+                     <td>[<a href="/projects/san-diego-noise-pollution/index.html">Website</a>]</td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <a href="https://davidrichards.me/san-diego-native-plants/index.html"><img src="img/thumbnails/sdplants_300x300.png" /></a>
+                     </td>
+                     <td>
+                        <h4>San Diego Native Plants Website</h4>
+                        <p>
+                           A custom website powered by custom Javascript widgets intended to assist students with remembering different species of native flora around San Diego county. Includes a main page listing different species in a flexible layout,
+                           an interactive flashcards page where a user can cycle through different species listings, and a quiz page, where users must select the correct plant species name per common name.
+                        </p>
+                     </td>
+                     <td>HTML, CSS, Javascript</td>
+                     <td>
+                        [<a href="https://davidrichards.me/san-diego-native-plants/index.html">Main Page</a>]<br />
+                        [<a href="https://davidrichards.me/san-diego-native-plants/flashcards.html">Flashcards Page</a>]<br />
+                        [<a href="https://davidrichards.me/san-diego-native-plants/quiz.html">Quiz Page</a>]<br />
+                        <br />
+                        [<a href="https://github.com/drich-jpg/san-diego-native-plants">GitHub</a>]
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <a href="https://davidrichards.me/"><img src="img/thumbnails/portfolio_300x300.png" /></a>
+                     </td>
+                     <td>
+                        <h4>David Richards Portfolio Website</h4>
+                        <p>A static website listing projects made by David Richards.</p>
+                     </td>
+                     <td>HTML, CSS</td>
+                     <td>[<a href="https://davidrichards.me">Website</a>]</td>
+                  </tr>
+               </tbody>
+            </table>
          </article>
       </main>
       <footer id="follow">
          <div id="followUs">Find me online:</div>
          <a href="https://www.linkedin.com/in/davidrichardsme"
-            ><div id="icon">LinkedIn<img id="icon" src="../../img/linkedin.png" alt="LinkedIn" /></div
+            ><div id="icon">LinkedIn<img id="icon" src="img/linkedin.png" alt="LinkedIn" /></div
          ></a>
          <a href="https://github.com/drich-jpg"
-            ><div id="icon">GitHub<img id="icon" src="../../img/github.png" alt="GitHub" /></div
+            ><div id="icon">GitHub<img id="icon" src="img/github.png" alt="GitHub" /></div
          ></a>
       </footer>
    </body>
