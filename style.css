@@ -133,14 +133,17 @@ nav a#navItem:hover {
    max-width: 750px;
 }
 
-figure img {
-   display: block;
+figure {
+   display: table;
+   justify-content: center;
+   margin: 0 auto;
 }
 
 figcaption {
    background-color: burlywood;
-   margin: 0;
-   position: absolute;
+   margin: 0 auto;
+   width: fit-content;
+   position: relative;
    bottom: 0;
    padding: 5px;
 }
@@ -201,9 +204,9 @@ article ul li a {
    font-weight: bold;
 }
 
-article img {
+/* article img {
    width: 100%;
-}
+} */
 
 iframe {
    margin-left: auto;
@@ -272,6 +275,18 @@ div#icon {
    height: 100px;
    text-align: center;
    margin: 5px;
+}
+
+.column {
+   flex: 2 2 500px;
+   padding: 10px;
+   display: block;
+   float: left;
+   flex-flow: column;
+}
+
+.row {
+   display: flex;
 }
 
 /* Path Motion Effect */
@@ -367,6 +382,14 @@ div#icon {
 
    h1 {
       text-align: center;
+   }
+
+   h3 {
+      text-align: center;
+   }
+
+   ul {
+      padding-left: 0;
    }
 
    form {
